@@ -26,7 +26,7 @@ const getProducts = async (req, res) => {
 const getSearchProducts = async (req, res) => {
   try {
     const id = req.params.id;
-    const collect = await model.find(id);
+    const collect = await model.findById(id);
     !collect
       ? res.status(404).json({ message: "Product not find" })
       : res.status(200).json({ message: "Product find", collect });
